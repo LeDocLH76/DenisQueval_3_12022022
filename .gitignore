@@ -1,2 +1,6 @@
 .sass-cache/
 node_modules/
+
+.gitignore
+.vscode/settings.json
+css/styles.css.map

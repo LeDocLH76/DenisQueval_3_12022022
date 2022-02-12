@@ -1,11 +1,10 @@
-```json
-
-     "liveSassCompile.settings.formats": [
+{
+    "liveSassCompile.settings.formats": [
     {
         "format": "expanded",
         "extensionName": ".css",
         "savePath": "/css"
-    },
+    }
     // {
     //     "extensionName": ".min.css",
     //     "format": "compressed",
@@ -17,8 +16,9 @@
         ".vscode/**"
     ],
     "liveSassCompile.settings.generateMap": true,
-    "liveSassCompile.settings.autoprefix": [
-        "defaults"
-    ]
+    "liveSassCompile.settings.autoprefix": false
+    // [
+    //     "defaults"
+    // ]
 
-```
+}
