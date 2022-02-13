@@ -1,14 +1,107 @@
-*{
+@import "./variables";
+* {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Shrikhand', cursive;
+    font-family: #{$font-texte};
 }
 
-img{
+img {
     max-width: 100%;
     height: auto;
 }
 
-body{
-    width: 900px;
+body {
+    max-width: 768px;
+}
+
+h1 {
+    font-family: #{$font-texte};
+}
+
+.container-header {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    &_vers-acceuil {
+        font-size: 52px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: none;
+    }
+    &_logo {
+        width: 180px;
+    }
+}
+
+.container-titre {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &_localisation {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        background-color: $fond-gris-fonce;
+        border-top: 3px solid;
+        border-color: darken($fond-gris-fonce, 8);
+        font-weight: 400;
+        font-size: 20px;
+        .localisation {
+            padding: 15px 30px 15px 0;
+            width: 230px;
+        }
+    }
+    & i {
+        padding-right: 10px;
+    }
+    &_principal {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: $fond-gris-clair;
+        h1 {
+            padding: 0;
+            margin: 0;
+            width: 75%;
+            font-size: 26px;
+            text-align: center;
+            padding-top: 25px;
+            padding-bottom: 15px;
+        }
+    }
+    &_presentation {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: $fond-gris-clair;
+
+        p {
+            margin: 0;
+            padding-bottom: 20px;
+            width: 90%;
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+    &_bouton {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: $fond-gris-clair;
+        padding-bottom: 45px;
+
+        .explorer-bouton {
+            background-image: linear-gradient($couleur-secondaire,$couleur-primaire);
+            border-radius: 25px;
+            box-shadow: 0px 5px 5px  darken($fond-gris-fonce,10);
+            padding: 17px;
+            color: white;
+            text-decoration: none;
+        }
+    }
 }

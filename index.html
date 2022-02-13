@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OhMyFood</title>
     <link rel="shortcut icon" href="images/icones/favicon.ico" type="image/x-icon">
-<!-- Font Kit version 6 -->
+    <!-- Font Kit version 6 -->
     <script src="https://kit.fontawesome.com/18595b4747.js" crossorigin="anonymous"></script>
-<!-- Google fonts -->
+    <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -21,24 +22,38 @@
 <body>
     <header>
         <div class="container-header">
-            <div class="container-header_vers-acceuil">
-                <a href="./index.html">Fleche</a>
-            </div>
             <img class="container-header_logo" src="./images/logo/ohmyfood.png" alt="Logo OhMyFood">
         </div>
+        <div class="container-header_vers-acceuil">
+            <a href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+
     </header>
     <main>
         <section class="container-titre">
             <div class="container-titre_localisation">
-                Paris,Belleville
+                <div class="localisation">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Paris,Belleville
+                </div>
             </div>
-            <h1>Réservez le menu qui vous convient</h1>
+
+            <div class="container-titre_principal">
+                <h1>
+                    Réservez le menu qui vous convient
+                </h1>
+            </div>
+
             <div class="container-titre_presentation">
-                découvrez des restaurants d'exeption, séléctionnés par nos soins.
+                <p>
+                    Découvrez des restaurants d'exeption, séléctionnés par nos soins.
+                </p>
             </div>
-            <button class="container-titre_bouton">
-                Explorer nos restaurants
-            </button>
+
+            <div class="container-titre_bouton">
+                    <a href="#" class="explorer-bouton">Explorer nos restaurants</a>
+            </div>
+
         </section>
 
         <section class="container-fonctionnement">
@@ -46,15 +61,18 @@
                 <h2>Fonctionnement</h2>
                 <div class="container-fonctionnement_bouton">
                     <div class="container-fonctionnement_etape">1</div>
-                    <div class="container-fonctionnement_texte">Choisissez un restaurant</div>
+                    <div class="container-fonctionnement_texte"><i
+                            class="fa-solid fa-mobile-screen-button"></i>Choisissez un restaurant</div>
                 </div>
                 <div class="container-fonctionnement_bouton">
                     <div class="container-fonctionnement_etape">2</div>
-                    <div class="container-fonctionnement_texte">Composez votre menu</div>
+                    <div class="container-fonctionnement_texte"><i class="fa-solid fa-list-ul"></i>Composez votre menu
+                    </div>
                 </div>
                 <div class="container-fonctionnement_bouton">
                     <div class="container-fonctionnement_etape">3</div>
-                    <div class="container-fonctionnement_texte">Dégustez au restaurant</div>
+                    <div class="container-fonctionnement_texte"><i class="fa-solid fa-store"></i>Dégustez au restaurant
+                    </div>
                 </div>
             </div>
         </section>
@@ -72,7 +90,8 @@
                         </div>
                         <div class="container-restaurant_carte-localisation">Ménilmontant</div>
                         <div class="container-restaurant_carte-coeur">
-                            <i>icone coeur</i>
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-heart"></i>
                         </div>
                     </div>
                 </div>
@@ -81,24 +100,23 @@
         <footer>
             <img class="footer_logo" src="./images/logo/ohmyfood.png" alt="Logo OhMyfood">
             <ul class="footer_liste">
-                <li><i>icone couverts </i>Proposer un restaurant</li>
-                <li><i>icone mains </i>Devenir partenaire</li>
+                <li><i class="fa-solid fa-utensils"></i>Proposer un restaurant</li>
+                <li><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</li>
                 <li>Mentions légales</li>
                 <li><a href="mailto:">Contact</a></li>
             </ul>
         </footer>
 
     </main>
-<i class="fa-solid fa-mobile-screen-button"></i>
-<i class="fa-solid fa-list-ul"></i>
-<i class="fa-solid fa-utensils"></i>
-<i class="fa-solid fa-store"></i>
-<i class="fa-regular fa-heart"></i>
-<i class="fa-solid fa-heart"></i>
-<i class="fa-solid fa-handshake-angle"></i>
-<i class="fa-solid fa-location-dot"></i>
-<i class="fa-solid fa-arrow-left"></i>
-<i class="fa-regular fa-circle-check"></i>
+
+
+
+
+
+
+
+
+    <i class="fa-regular fa-circle-check"></i>
 </body>
 
 </html>
