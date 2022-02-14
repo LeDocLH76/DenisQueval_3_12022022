@@ -46,9 +46,9 @@ h1 {
   justify-content: center;
   width: 100%;
   text-align: center;
-  background-color: #eeeeee;
+  background-color: #ebebeb;
   border-top: 3px solid;
-  border-color: #dadada;
+  border-color: #d7d7d7;
   font-weight: 400;
   font-size: 20px;
 }
@@ -63,7 +63,7 @@ h1 {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #f8f8f8;
+  background-color: whitesmoke;
 }
 .container-titre_principal h1 {
   padding: 0;
@@ -78,7 +78,7 @@ h1 {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #f8f8f8;
+  background-color: whitesmoke;
 }
 .container-titre_presentation p {
   margin: 0;
@@ -91,14 +91,160 @@ h1 {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #f8f8f8;
+  background-color: whitesmoke;
   padding-bottom: 45px;
 }
 .container-titre_bouton .explorer-bouton {
   background-image: linear-gradient(#ff79da, #9356dc);
   border-radius: 25px;
-  box-shadow: 0px 5px 5px #d5d5d5;
+  box-shadow: 0px 5px 5px #d2d2d2;
   padding: 17px;
   color: white;
   text-decoration: none;
+}
+
+.container-fonctionnement {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+.container-fonctionnement_titre {
+  width: 90%;
+  font-size: 16px;
+  font-weight: 500;
+}
+.container-fonctionnement_titre h2 {
+  margin: 0;
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
+.container-fonctionnement_bouton {
+  width: 90%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  box-shadow: 0px 5px 5px #ebebeb;
+  margin: 10px 0;
+}
+.container-fonctionnement_etape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin: -10px;
+  background-color: #9356dc;
+  color: white;
+  border-radius: 15px;
+}
+.container-fonctionnement_icone {
+  font-size: 22px;
+  color: #8b8b8b;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+.container-fonctionnement_texte {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.container-restaurant {
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.container-restaurant_titre {
+  width: 90%;
+  font-size: 16px;
+  font-weight: 500;
+}
+.container-restaurant_titre h2 {
+  margin: 0;
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
+.container-restaurant_carte {
+  width: 100%;
+  max-width: 450px;
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.container-restaurant_carte_image {
+  width: 100%;
+  height: 172px;
+  overflow: hidden;
+}
+.container-restaurant_carte_image img {
+  width: 100%;
+  height: 100%;
+}
+.container-restaurant_carte_corps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+}
+.container-restaurant_carte_texte {
+  display: flex;
+  flex-direction: column;
+}
+.container-restaurant_carte_titre {
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 5px;
+}
+.container-restaurant_carte_localisation {
+  font-size: 14px;
+  font-weight: 300;
+  padding: 5px 0;
+}
+.container-restaurant_carte_coeur {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+.container-restaurant_carte_coeur .coeur-vide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  font-size: 20px;
+}
+.container-restaurant_carte_coeur .coeur-plein {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  font-size: 20px;
+}
+.container-restaurant_carte_coeur:hover .coeur-plein {
+  z-index: 2;
+}
+.container-restaurant .image-carte-1 {
+  object-fit: cover;
+  object-position: 50% 100%;
+}
+.container-restaurant .image-carte-2 {
+  object-fit: cover;
+  object-position: 50% 62%;
+}
+.container-restaurant .image-carte-3 {
+  object-fit: cover;
+  object-position: 50% 100%;
+}
+.container-restaurant .image-carte-4 {
+  object-fit: cover;
+  object-position: 50% 100%;
 }/*# sourceMappingURL=styles.css.map */
