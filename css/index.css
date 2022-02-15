@@ -9,10 +9,10 @@
   align-items: center;
 }
 .container-titre_localisation {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
   text-align: center;
   background-color: #ebebeb;
   border-top: 3px solid;
@@ -69,6 +69,24 @@
   padding: 17px;
   color: white;
   text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.container-titre_bouton .explorer-bouton:hover::after {
+  opacity: 1;
+}
+.container-titre_bouton .explorer-bouton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(#fface8, #ae80e5);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 150ms;
 }
 
 .container-fonctionnement {
@@ -103,9 +121,27 @@
   border-radius: 15px;
   box-shadow: 0px 5px 5px #ebebeb;
   margin: 10px 0;
+  position: relative;
+  z-index: 1;
 }
-.container-fonctionnement_bouton:hover {
+.container-fonctionnement_bouton:hover i {
+  color: #9356dc;
+}
+.container-fonctionnement_bouton:hover::after {
+  opacity: 1;
+}
+.container-fonctionnement_bouton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 15px;
   background-color: #ffe9f9;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 150ms;
 }
 .container-fonctionnement_etape {
   display: flex;
@@ -175,6 +211,7 @@
   padding-left: 10px;
 }
 .container-restaurant_carte_texte {
+  width: 90%;
   display: flex;
   flex-direction: column;
 }
@@ -191,7 +228,19 @@
 .container-restaurant_carte_coeur {
   width: 20px;
   height: 20px;
+  margin-right: 10px;
   position: relative;
+  z-index: 1;
+}
+.container-restaurant_carte_coeur:hover {
+  cursor: pointer;
+}
+.container-restaurant_carte_coeur:active .coeur-plein {
+  opacity: 1;
+  background-color: white;
+}
+.container-restaurant_carte_coeur:active .coeur-vide {
+  color: transparent;
 }
 .container-restaurant_carte_coeur .coeur-vide {
   position: absolute;
@@ -204,11 +253,13 @@
   position: absolute;
   top: 0;
   left: 0;
+  background: linear-gradient(#9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
   z-index: -1;
   font-size: 20px;
-}
-.container-restaurant_carte_coeur:hover .coeur-plein {
-  z-index: 2;
+  transition: opacity 1000ms;
 }
 .container-restaurant .image-carte-1 {
   object-fit: cover;
