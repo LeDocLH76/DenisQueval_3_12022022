@@ -70,7 +70,6 @@
             padding: 17px;
             color: white;
             text-decoration: none;
-            overflow: hidden;
             position: relative;
             z-index: 1;
             &:hover {
@@ -79,6 +78,9 @@
                 }
             }
             &::after {
+                width: 100%;
+                height: 100%;
+                border-radius: 25px;
                 content: "";
                 position: absolute;
                 top: 0;
@@ -86,6 +88,8 @@
                 bottom: 0;
                 left: 0;
                 background-image: linear-gradient(lighten($couleur-secondaire, 10), lighten($couleur-primaire, 10));
+                box-shadow: 0px 7px 7px darken($fond-gris-fonce, 20);
+
                 opacity: 0;
                 z-index: -1;
                 transition: opacity 150ms;
@@ -143,6 +147,8 @@
             bottom: 0;
             left: 0;
             border-radius: 15px;
+            box-shadow: 0px 7px 7px darken($fond-gris-fonce,10);
+
             background-color: lighten($couleur-secondaire, 22);
             opacity: 0;
             z-index: -1;
@@ -178,6 +184,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 30px;
     padding-left: 20px;
     padding-right: 20px;
     &_titre {
@@ -261,6 +268,7 @@
                 left: 0;
                 background: linear-gradient($couleur-primaire, $couleur-secondaire);
                 -webkit-background-clip: text;
+                background-clip: text;
                 -webkit-text-fill-color: transparent;
                 opacity: 0;
                 z-index: -1;
