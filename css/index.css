@@ -174,13 +174,13 @@
   background-color: whitesmoke;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
+  align-items: center;
+  margin-top: 40px;
+  padding: 0 20px 30px 20px;
 }
 .container-restaurant_titre {
-  width: 90%;
+  width: 100%;
+  max-width: 450px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -204,10 +204,22 @@
   width: 100%;
   height: 172px;
   overflow: hidden;
+  position: relative;
 }
 .container-restaurant_carte_image img {
   width: 100%;
   height: 100%;
+}
+.container-restaurant_carte .etiquette-nouveau {
+  background-color: #99e2d0;
+  color: #1b6150;
+  border-radius: 2px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  padding: 5px 12px;
+  font-size: 14px;
+  font-style: normal;
 }
 .container-restaurant_carte_corps {
   display: flex;
