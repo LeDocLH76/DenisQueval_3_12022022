@@ -237,16 +237,19 @@
             padding-left: 10px;
         }
         &_texte {
+            
             width: 90%;
             display: flex;
             flex-direction: column;
         }
         &_titre {
+            color: black;
             font-size: 16px;
             font-weight: 500;
             padding-top: 5px;
         }
         &_localisation {
+            color: black;
             font-size: 14px;
             font-weight: 300;
             padding: 5px 0;
@@ -275,6 +278,8 @@
                 left: 0;
                 z-index: 1;
                 font-size: 20px;
+                color: black;
+                transition: color 150ms;
             }
             .coeur-plein {
                 position: absolute;
@@ -287,7 +292,7 @@
                 opacity: 0;
                 z-index: -1;
                 font-size: 20px;
-                transition: opacity 1000ms;
+                transition: opacity  150ms;
             }
         }
     }
