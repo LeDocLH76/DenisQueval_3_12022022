@@ -1,6 +1,6 @@
 @import "./variables";
 .container-header_vers-acceuil {
-    display: initial;
+    display: none;
 }
 
 .container-titre {
@@ -234,30 +234,33 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-left: 10px;
         }
         &_texte {
-            
             width: 90%;
             display: flex;
             flex-direction: column;
         }
         &_titre {
             color: black;
-            font-size: 16px;
-            font-weight: 500;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -1;
             padding-top: 5px;
+            padding-left: 10px;
         }
         &_localisation {
             color: black;
-            font-size: 14px;
-            font-weight: 300;
-            padding: 5px 0;
+            font-size: 16px;
+            font-weight: 400;
+            padding-top: 5px;
+            padding-bottom: 15px;
+            padding-left: 10px;
         }
         &_coeur {
             width: 20px;
             height: 20px;
             margin-right: 10px;
+            margin-bottom: 10px;
             position: relative; 
             z-index: 1;
             &:hover {
