@@ -100,7 +100,6 @@
   padding-left: 20px;
 }
 .container-fonctionnement a {
-  width: 100%;
   text-decoration: none;
 }
 .container-fonctionnement_titre {
@@ -197,6 +196,9 @@
   overflow: hidden;
   margin-bottom: 15px;
 }
+.container-restaurant_carte h2 {
+  display: none;
+}
 .container-restaurant_carte a {
   text-decoration: none;
 }
@@ -232,10 +234,10 @@
   flex-direction: column;
 }
 .container-restaurant_carte_titre {
+  margin: 0;
   color: black;
   font-size: 18px;
   font-weight: 600;
-  letter-spacing: -1;
   padding-top: 5px;
   padding-left: 10px;
 }
