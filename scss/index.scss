@@ -117,8 +117,14 @@
             padding-bottom: 15px;
         }
     }
-    &_bouton {
+    &_3boutons{
         width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+    &_bouton {
+        width: 100%;
+        max-width: 400px;
         height: 50px;
         display: flex;
         flex-direction: row;
@@ -174,7 +180,37 @@
     &_texte {
         font-size: 16px;
         font-weight: 500;
+        color: black;
     }
+}
+
+@media screen and(min-width:768px) {
+    .container-fonctionnement{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &_3boutons{
+            width: 100%;
+            padding-right: 10px;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        &_bouton{
+            width: 31%;
+            max-width: 400px;
+        }
+        &_titre{
+            display: flex;
+            justify-content: center;
+            h2{
+                font-size: 24px;
+            }
+        }
+        &_texte{
+            padding-right: 5px;
+        }
+    }
+    
 }
 
 .container-restaurant {
@@ -185,9 +221,10 @@
     align-items: center;
     margin-top: 40px;
     padding: 0 20px 30px 20px;
-    // padding-left: 20px;
-    // padding-right: 20px;
     &_titre {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
         width: 100%;
         max-width: 450px;
         font-size: 16px;
@@ -197,6 +234,12 @@
             padding-top: 40px;
             padding-bottom: 15px;
         }
+    }
+    &_4restaurants{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     &_carte {
         width: 100%;
@@ -301,6 +344,32 @@
             }
         }
     }
+}
+
+@media screen and (min-width:768px) {
+    .container-restaurant{
+        &_titre{
+            max-width: initial;
+            flex-direction: row;
+            justify-content: center;
+            padding-bottom: 20px;
+            h2{
+                font-size: 24px;
+            }
+        }
+        &_4restaurants{
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        &_carte{
+            max-width: 330px;
+            margin: 3px;
+        }
+    }
+    
+
+
     .image-carte-1 {
         object-fit: cover;
         object-position: 50% 100%;

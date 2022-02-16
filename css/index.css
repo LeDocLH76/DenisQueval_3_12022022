@@ -112,8 +112,14 @@
   padding-top: 40px;
   padding-bottom: 15px;
 }
-.container-fonctionnement_bouton {
+.container-fonctionnement_3boutons {
   width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.container-fonctionnement_bouton {
+  width: 100%;
+  max-width: 400px;
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -166,8 +172,36 @@
 .container-fonctionnement_texte {
   font-size: 16px;
   font-weight: 500;
+  color: black;
 }
 
+@media screen and (min-width: 768px) {
+  .container-fonctionnement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container-fonctionnement_3boutons {
+    width: 100%;
+    padding-right: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .container-fonctionnement_bouton {
+    width: 31%;
+    max-width: 400px;
+  }
+  .container-fonctionnement_titre {
+    display: flex;
+    justify-content: center;
+  }
+  .container-fonctionnement_titre h2 {
+    font-size: 24px;
+  }
+  .container-fonctionnement_texte {
+    padding-right: 5px;
+  }
+}
 .container-restaurant {
   width: 100%;
   background-color: whitesmoke;
@@ -178,6 +212,9 @@
   padding: 0 20px 30px 20px;
 }
 .container-restaurant_titre {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
   width: 100%;
   max-width: 450px;
   font-size: 16px;
@@ -187,6 +224,12 @@
   margin: 0;
   padding-top: 40px;
   padding-bottom: 15px;
+}
+.container-restaurant_4restaurants {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .container-restaurant_carte {
   width: 100%;
@@ -289,19 +332,44 @@
   font-size: 20px;
   transition: opacity 150ms;
 }
-.container-restaurant .image-carte-1 {
-  object-fit: cover;
-  object-position: 50% 100%;
-}
-.container-restaurant .image-carte-2 {
-  object-fit: cover;
-  object-position: 50% 62%;
-}
-.container-restaurant .image-carte-3 {
-  object-fit: cover;
-  object-position: 50% 100%;
-}
-.container-restaurant .image-carte-4 {
-  object-fit: cover;
-  object-position: 50% 100%;
+
+@media screen and (min-width: 768px) {
+  .container-restaurant_titre {
+    max-width: initial;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  .container-restaurant_titre h2 {
+    font-size: 24px;
+  }
+  .container-restaurant_4restaurants {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .container-restaurant_carte {
+    max-width: 330px;
+    margin: 3px;
+  }
+
+  .image-carte-1 {
+    object-fit: cover;
+    object-position: 50% 100%;
+  }
+
+  .image-carte-2 {
+    object-fit: cover;
+    object-position: 50% 62%;
+  }
+
+  .image-carte-3 {
+    object-fit: cover;
+    object-position: 50% 100%;
+  }
+
+  .image-carte-4 {
+    object-fit: cover;
+    object-position: 50% 100%;
+  }
 }/*# sourceMappingURL=index.css.map */
