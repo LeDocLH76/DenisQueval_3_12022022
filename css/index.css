@@ -225,7 +225,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 10px;
 }
 .container-restaurant_carte_texte {
   width: 90%;
@@ -234,20 +233,25 @@
 }
 .container-restaurant_carte_titre {
   color: black;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -1;
   padding-top: 5px;
+  padding-left: 10px;
 }
 .container-restaurant_carte_localisation {
   color: black;
-  font-size: 14px;
-  font-weight: 300;
-  padding: 5px 0;
+  font-size: 16px;
+  font-weight: 400;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  padding-left: 10px;
 }
 .container-restaurant_carte_coeur {
   width: 20px;
   height: 20px;
   margin-right: 10px;
+  margin-bottom: 10px;
   position: relative;
   z-index: 1;
 }
