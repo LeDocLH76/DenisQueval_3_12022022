@@ -73,12 +73,13 @@
 }
 .container-emplacement_titre_texte {
   font-size: 18px;
-  padding: 5px 0;
+  padding: 2px 0;
 }
 .container-emplacement_titre_soulignement {
   width: 40px;
-  height: 5px;
+  height: 3px;
   border-top: 3px solid #99e2d0;
+  padding-bottom: 10px;
 }
 .container-emplacement_plats {
   width: 100%;
@@ -87,6 +88,7 @@
 }
 .container-emplacement_plats_plat {
   width: 100%;
+  max-width: 600px;
   background-color: white;
   border-radius: 10px;
   margin: 5px 0;
@@ -94,13 +96,13 @@
   position: relative;
 }
 .container-emplacement_plats_plat:hover .container-elastique {
-  width: 85%;
+  width: 80%;
 }
 .container-emplacement_plats_plat:hover .selecteur {
   right: 0;
 }
 .container-emplacement_plats_plat:hover .selecteur i {
-  transform: rotate(90deg);
+  transform: rotate(360deg);
 }
 .container-emplacement_plats_plat .container-elastique {
   width: 100%;
@@ -110,6 +112,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  transition: width 300ms;
 }
 .container-emplacement_plats_plat_texte {
   display: flex;
@@ -136,23 +139,28 @@
 .container-emplacement_plats_plat_prix {
   font-size: 16px;
   font-weight: 500;
-  margin: 0 15px;
+  margin-right: 15px;
+  margin-left: 5px;
 }
 .container-emplacement_plats_plat .selecteur {
   width: 70px;
   height: 70px;
   background-color: #99e2d0;
-  border-radius: 0 10px 10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   right: -70px;
   top: 0;
+  transition: right 350ms;
+}
+.container-emplacement_plats_plat .selecteur:hover {
+  cursor: pointer;
 }
 .container-emplacement_plats_plat .selecteur i {
   font-size: 30px;
   color: #99e2d0;
   background-color: white;
   border-radius: 15px;
+  transition: transform 350ms;
 }/*# sourceMappingURL=page1.css.map */

@@ -71,12 +71,13 @@
         flex-direction: column;
         &_texte {
             font-size: 18px;
-            padding: 5px 0;
+            padding: 2px 0;
         }
         &_soulignement {
             width: 40px;
-            height: 5px;
+            height: 3px;
             border-top: 3px solid $couleur-tertiaire;
+            padding-bottom: 10px;
         }
     }
     &_plats {
@@ -85,21 +86,21 @@
         flex-direction: column;
         &_plat {
             width: 100%;
+            max-width: 600px;
             background-color: white;
             border-radius: 10px;
-
             margin: 5px 0;
             overflow: hidden;
             position: relative;
             &:hover {
                 .container-elastique {
-                    width: 85%;
+                    width: 80%;
                 }
                 .selecteur {
                     right: 0;
                 }
                 .selecteur i{
-                    transform: rotate(90deg);
+                    transform: rotate(360deg);
                 }
             }
             .container-elastique {
@@ -109,6 +110,8 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-end;
+                transition: width 300ms;
+               
             }
             &_texte {
                 display: flex;
@@ -136,24 +139,29 @@
             &_prix {
                 font-size: 16px;
                 font-weight: 500;
-                margin: 0 15px;
+                margin-right:15px;
+                margin-left: 5px;
             }
             .selecteur {
                 width: 70px;
                 height: 70px;
                 background-color: $couleur-tertiaire;
-                border-radius: 0 10px 10px 0;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 position: absolute;
                 right: -70px;
                 top: 0;
+                transition: right 350ms;
+                &:hover{
+                    cursor: pointer;
+                }
                 i {
                     font-size: 30px;
                     color: $couleur-tertiaire;
                     background-color: white;
                     border-radius: 15px;
+                    transition: transform 350ms;
                 }
             }
         }
