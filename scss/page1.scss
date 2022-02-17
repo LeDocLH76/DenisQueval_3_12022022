@@ -20,13 +20,13 @@
     border-radius: 25px 25px 0 0;
     display: flex;
     justify-content: center;
-    .container-titre{
+    .container-titre {
         width: 90%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        }
+    }
     h1 {
         margin: 0;
         font-family: #{$font-titre};
@@ -36,7 +36,6 @@
         position: relative;
         width: 30px;
         height: 30px;
-
     }
     .coeur-vide {
         position: absolute;
@@ -54,28 +53,109 @@
     }
 }
 
-.menu{
+.menu {
     width: 100%;
     background-color: $fond-gris-clair;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.container-emplacement{
+.container-emplacement {
     width: 90%;
     display: flex;
     flex-direction: column;
-    &_titre{
+    margin-bottom: 20px;
+    &_titre {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        &_texte{
+        &_texte {
             font-size: 18px;
             padding: 5px 0;
         }
-        &_soulignement{
+        &_soulignement {
             width: 40px;
             height: 5px;
             border-top: 3px solid $couleur-tertiaire;
+        }
+    }
+    &_plats {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        &_plat {
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+
+            margin: 5px 0;
+            overflow: hidden;
+            position: relative;
+            &:hover {
+                .container-elastique {
+                    width: 85%;
+                }
+                .selecteur {
+                    right: 0;
+                }
+                .selecteur i{
+                    transform: rotate(90deg);
+                }
+            }
+            .container-elastique {
+                width: 100%; /*80%*/
+                height: 70px;
+                padding-bottom: 12px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+            &_texte {
+                display: flex;
+                flex-direction: column;
+                padding-left: 10px;
+                font-weight: 500;
+                overflow: hidden;
+
+                h2 {
+                    margin: 0;
+                    font-size: 18px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                p {
+                    margin: 0;
+                    font-size: 14px;
+                    padding-top: 10px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            &_prix {
+                font-size: 16px;
+                font-weight: 500;
+                margin: 0 15px;
+            }
+            .selecteur {
+                width: 70px;
+                height: 70px;
+                background-color: $couleur-tertiaire;
+                border-radius: 0 10px 10px 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                right: -70px;
+                top: 0;
+                i {
+                    font-size: 30px;
+                    color: $couleur-tertiaire;
+                    background-color: white;
+                    border-radius: 15px;
+                }
+            }
         }
     }
 }
