@@ -187,6 +187,58 @@
   transition: transform 350ms;
 }
 
+@media screen and (min-width: 768px) {
+  .container-image-titre {
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-fond {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .restaurant-titre .container-titre {
+    width: 40%;
+  }
+
+  .container-emplacement {
+    width: 98%;
+    flex-direction: row;
+    align-items: initial;
+    justify-content: space-between;
+  }
+  .container-emplacement_titre {
+    width: 12%;
+  }
+  .container-emplacement_titre_texte {
+    font-size: 16px;
+  }
+  .container-emplacement_plats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 88%;
+  }
+  .container-emplacement_plats_plat {
+    width: 45%;
+    max-width: 300px;
+    margin: 5px 5px;
+  }
+  .container-emplacement_plats_plat_texte h2 {
+    font-size: 16px;
+  }
+  .container-emplacement_plats_plat_texte p {
+    font-size: 12px;
+  }
+  .container-emplacement_plats_plat_prix {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container-emplacement {
+    max-width: 1080px;
+  }
+}
 .container-commander {
   width: 100%;
   display: flex;

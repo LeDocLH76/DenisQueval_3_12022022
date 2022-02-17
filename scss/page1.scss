@@ -32,7 +32,7 @@
             height: 30px;
             margin-right: 10px;
             margin-bottom: 10px;
-            position: relative; 
+            position: relative;
             z-index: 1;
             &:hover {
                 cursor: pointer;
@@ -66,10 +66,9 @@
                 opacity: 0;
                 z-index: -1;
                 font-size: 30px;
-                transition: opacity  150ms;
+                transition: opacity 150ms;
             }
         }
-
     }
     h1 {
         margin: 0;
@@ -144,7 +143,7 @@
                 .selecteur {
                     right: 0;
                 }
-                .selecteur i{
+                .selecteur i {
                     transform: rotate(360deg);
                 }
             }
@@ -156,7 +155,6 @@
                 justify-content: space-between;
                 align-items: flex-end;
                 transition: width 300ms;
-               
             }
             &_texte {
                 display: flex;
@@ -184,7 +182,7 @@
             &_prix {
                 font-size: 16px;
                 font-weight: 500;
-                margin-right:15px;
+                margin-right: 15px;
                 margin-left: 5px;
             }
             .selecteur {
@@ -198,7 +196,7 @@
                 right: -70px;
                 top: 0;
                 transition: right 350ms;
-                &:hover{
+                &:hover {
                     cursor: pointer;
                 }
                 i {
@@ -212,14 +210,66 @@
         }
     }
 }
+@media screen and (min-width: 768px) {
+    .container-image-titre {
+        display: flex;
+        justify-content: center;
+    }
+    .image-fond {
+        width: 100%;
+        max-width: 800px;
+    }
+    .restaurant-titre .container-titre {
+        width: 40%;
+    }
+    .container-emplacement {
+        width: 98%;
+        flex-direction: row;
+        align-items: initial;
+        justify-content: space-between;
+        &_titre {
+            width: 12%;
+            &_texte {
+                font-size: 16px;
+            }
+        }
+        &_plats {
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 88%;
+            &_plat {
+                width: 45%;
+                max-width: 300px;
+                margin: 5px 5px;
+                &_texte {
+                    h2 {
+                        font-size: 16px;
+                    }
+                    p {
+                        font-size: 12px;
+                    }
+                }
+                &_prix {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
 
-.container-commander{
+@media screen and (min-width: 992px) {
+    .container-emplacement{
+        max-width: 1080px;
+    }
+}
+
+.container-commander {
     width: 100%;
     display: flex;
     justify-content: center;
     background-color: $fond-gris-clair;
     padding-bottom: 45px;
-    &_bouton{
+    &_bouton {
         width: 210px;
 
         background-image: linear-gradient(to bottom right, $couleur-secondaire, $couleur-primaire);
@@ -246,7 +296,11 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-image: linear-gradient(to bottom right, lighten($couleur-secondaire, 10), lighten($couleur-primaire, 10));
+            background-image: linear-gradient(
+                to bottom right,
+                lighten($couleur-secondaire, 10),
+                lighten($couleur-primaire, 10)
+            );
             box-shadow: 0px 7px 7px darken($fond-gris-fonce, 20);
 
             opacity: 0;
