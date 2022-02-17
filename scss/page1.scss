@@ -3,6 +3,17 @@
     display: initial;
 }
 
+@keyframes fondu {
+    from {
+        transform: translate(0px, 10px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+
 .container-image-titre {
     width: 100%;
     position: relative;
@@ -75,25 +86,6 @@
         font-family: #{$font-titre};
         font-size: 24px;
     }
-    // .container-coeur {
-    //     position: relative;
-    //     width: 30px;
-    //     height: 30px;
-    // }
-    // .coeur-vide {
-    //     position: absolute;
-    //     font-size: 30px;
-    //     top: 0;
-    //     left: 0;
-    // }
-
-    // .coeur-plein {
-    //     position: absolute;
-    //     font-size: 30px;
-    //     top: 0;
-    //     left: 0;
-    //     display: none;
-    // }
 }
 
 .menu {
@@ -113,6 +105,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+
         &_texte {
             font-size: 18px;
             padding: 2px 0;
@@ -128,6 +121,42 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        .menu1{
+            transform: translate(0px, 10px);
+            opacity: 0;
+            animation-name: fondu;
+            animation-duration: 1s;
+            animation-delay: 750ms;
+            animation-fill-mode: forwards;
+        }
+        
+        .menu2{
+            opacity: 0;
+            animation-name: fondu;
+            animation-duration: 1s;
+            animation-delay: 500ms;
+            animation-fill-mode: forwards;
+
+        }
+        
+        .menu3{
+            opacity: 0;
+            animation-name: fondu;
+            animation-duration: 1s;
+            animation-delay: 250ms;
+            animation-fill-mode: forwards;
+
+        }
+        
+        .menu4{
+            opacity: 0;
+            animation-name: fondu;
+            animation-duration: 1s;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+
+        }
+        
         &_plat {
             width: 100%;
             max-width: 600px;
@@ -136,6 +165,7 @@
             margin: 5px 0;
             overflow: hidden;
             position: relative;
+
             &:hover {
                 .container-elastique {
                     width: 80%;
@@ -223,7 +253,7 @@
         width: 40%;
     }
     .container-emplacement {
-        width: 98%;
+        max-width: 98%;
         flex-direction: row;
         align-items: initial;
         justify-content: space-between;
