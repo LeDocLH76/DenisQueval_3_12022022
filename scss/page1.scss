@@ -26,31 +26,75 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+
+        & .container-coeur {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            position: relative; 
+            z-index: 1;
+            &:hover {
+                cursor: pointer;
+            }
+            &:active {
+                & .coeur-plein {
+                    opacity: 1;
+                    background-color: white;
+                }
+                & .coeur-vide {
+                    color: transparent;
+                }
+            }
+            .coeur-vide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                font-size: 30px;
+                color: black;
+                transition: color 150ms;
+            }
+            .coeur-plein {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: linear-gradient($couleur-primaire, $couleur-secondaire);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                opacity: 0;
+                z-index: -1;
+                font-size: 30px;
+                transition: opacity  150ms;
+            }
+        }
+
     }
     h1 {
         margin: 0;
         font-family: #{$font-titre};
         font-size: 24px;
     }
-    .container-coeur {
-        position: relative;
-        width: 30px;
-        height: 30px;
-    }
-    .coeur-vide {
-        position: absolute;
-        font-size: 30px;
-        top: 0;
-        left: 0;
-    }
+    // .container-coeur {
+    //     position: relative;
+    //     width: 30px;
+    //     height: 30px;
+    // }
+    // .coeur-vide {
+    //     position: absolute;
+    //     font-size: 30px;
+    //     top: 0;
+    //     left: 0;
+    // }
 
-    .coeur-plein {
-        position: absolute;
-        font-size: 30px;
-        top: 0;
-        left: 0;
-        display: none;
-    }
+    // .coeur-plein {
+    //     position: absolute;
+    //     font-size: 30px;
+    //     top: 0;
+    //     left: 0;
+    //     display: none;
+    // }
 }
 
 .menu {

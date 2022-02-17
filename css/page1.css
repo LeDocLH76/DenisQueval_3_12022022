@@ -28,28 +28,50 @@
   justify-content: space-between;
   align-items: center;
 }
+.restaurant-titre .container-titre .container-coeur {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+.restaurant-titre .container-titre .container-coeur:hover {
+  cursor: pointer;
+}
+.restaurant-titre .container-titre .container-coeur:active .coeur-plein {
+  opacity: 1;
+  background-color: white;
+}
+.restaurant-titre .container-titre .container-coeur:active .coeur-vide {
+  color: transparent;
+}
+.restaurant-titre .container-titre .container-coeur .coeur-vide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  font-size: 30px;
+  color: black;
+  transition: color 150ms;
+}
+.restaurant-titre .container-titre .container-coeur .coeur-plein {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#9356dc, #ff79da);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  z-index: -1;
+  font-size: 30px;
+  transition: opacity 150ms;
+}
 .restaurant-titre h1 {
   margin: 0;
   font-family: 'Shrikhand', cursive;
   font-size: 24px;
-}
-.restaurant-titre .container-coeur {
-  position: relative;
-  width: 30px;
-  height: 30px;
-}
-.restaurant-titre .coeur-vide {
-  position: absolute;
-  font-size: 30px;
-  top: 0;
-  left: 0;
-}
-.restaurant-titre .coeur-plein {
-  position: absolute;
-  font-size: 30px;
-  top: 0;
-  left: 0;
-  display: none;
 }
 
 .menu {
