@@ -64,12 +64,14 @@
         padding-bottom: 45px;
 
         .explorer-bouton {
-            background-image: linear-gradient($couleur-secondaire, $couleur-primaire);
+            width: 210px;
+            background-image: linear-gradient(to bottom right, $couleur-secondaire, $couleur-primaire);
             border-radius: 25px;
             box-shadow: 0px 5px 5px darken($fond-gris-fonce, 10);
             padding: 17px;
             color: white;
             text-decoration: none;
+            text-align: center;
             position: relative;
             z-index: 1;
             &:hover {
@@ -87,7 +89,7 @@
                 right: 0;
                 bottom: 0;
                 left: 0;
-                background-image: linear-gradient(lighten($couleur-secondaire, 10), lighten($couleur-primaire, 10));
+                background-image: linear-gradient(to bottom right, lighten($couleur-secondaire, 10), lighten($couleur-primaire, 10));
                 box-shadow: 0px 7px 7px darken($fond-gris-fonce, 20);
 
                 opacity: 0;
