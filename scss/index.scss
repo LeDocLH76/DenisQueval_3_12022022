@@ -1,4 +1,6 @@
 @import "./variables";
+@import "./mixins";
+
 .container-header_vers-acceuil {
     display: none;
 }
@@ -56,43 +58,9 @@
         }
     }
     &_bouton {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        background-color: $fond-gris-clair;
-        padding-bottom: 45px;
+        @include container-bouton;
         .explorer-bouton {
-            width: 210px;
-            background-image: linear-gradient(to bottom right, $couleur-secondaire, $couleur-primaire);
-            border-radius: 25px;
-            box-shadow: 0px 5px 5px $fond-gris-plus-fonce-10;
-            padding: 17px;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            &:hover {
-                &::after {
-                    opacity: 1;
-                }
-            }
-            &::after {
-                width: 100%;
-                height: 100%;
-                border-radius: 25px;
-                content: "";
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background-image: linear-gradient(to bottom right, lighten($couleur-secondaire, 10), lighten($couleur-primaire, 10));
-                box-shadow: 0px 7px 7px $fond-gris-plus-fonce-20;
-                opacity: 0;
-                z-index: -1;
-                transition: opacity 150ms;
-            }
+            @include bouton-principal;
         }
     }
 }
@@ -116,7 +84,7 @@
             padding-bottom: 15px;
         }
     }
-    &_3boutons{
+    &_3boutons {
         width: 90%;
         display: flex;
         flex-direction: column;
@@ -184,28 +152,28 @@
 }
 
 @media screen and(min-width:768px) {
-    .container-fonctionnement{
+    .container-fonctionnement {
         display: flex;
         flex-direction: column;
         align-items: center;
-        &_3boutons{
+        &_3boutons {
             width: 100%;
             padding-right: 10px;
             flex-direction: row;
             justify-content: space-around;
         }
-        &_bouton{
+        &_bouton {
             width: 31%;
             max-width: 400px;
         }
-        &_titre{
+        &_titre {
             display: flex;
             justify-content: center;
-            h2{
+            h2 {
                 font-size: 24px;
             }
         }
-        &_texte{
+        &_texte {
             padding-right: 5px;
         }
     }
@@ -233,7 +201,7 @@
             padding-bottom: 15px;
         }
     }
-    &_4restaurants{
+    &_4restaurants {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -246,7 +214,7 @@
         border-radius: 15px;
         overflow: hidden;
         margin-bottom: 15px;
-        h2{
+        h2 {
             display: none;
         }
         a {
@@ -262,14 +230,14 @@
                 height: 100%;
             }
         }
-        .etiquette-nouveau{
+        .etiquette-nouveau {
             background-color: $couleur-tertiaire;
-            color:$couleur-tertiaire-plus-fonce-50;
+            color: $couleur-tertiaire-plus-fonce-50;
             border-radius: 2px;
             position: absolute;
             right: 12px;
             top: 12px;
-            padding:5px 12px;
+            padding: 5px 12px;
             font-size: 14px;
             font-style: normal;
         }
@@ -300,67 +268,28 @@
             padding-left: 10px;
         }
         &_coeur {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            position: relative; 
-            z-index: 1;
-            &:hover {
-                cursor: pointer;
-            }
-            &:active {
-                & .coeur-plein {
-                    opacity: 1;
-                    background-color: white;
-                }
-                & .coeur-vide {
-                    color: transparent;
-                }
-            }
-            .coeur-vide {
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 1;
-                font-size: 20px;
-                color: black;
-                transition: color 150ms;
-            }
-            .coeur-plein {
-                position: absolute;
-                top: 0;
-                left: 0;
-                background: linear-gradient($couleur-primaire, $couleur-secondaire);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                opacity: 0;
-                z-index: -1;
-                font-size: 20px;
-                transition: opacity  150ms;
-            }
+@include coeur (20px);
         }
     }
 }
 
-@media screen and (min-width:768px) {
-    .container-restaurant{
-        &_titre{
+@media screen and (min-width: 768px) {
+    .container-restaurant {
+        &_titre {
             max-width: initial;
             flex-direction: row;
             justify-content: center;
             padding-bottom: 20px;
-            h2{
+            h2 {
                 font-size: 24px;
             }
         }
-        &_4restaurants{
+        &_4restaurants {
             flex-direction: row;
             justify-content: space-around;
             flex-wrap: wrap;
         }
-        &_carte{
+        &_carte {
             max-width: 330px;
             margin: 3px;
         }

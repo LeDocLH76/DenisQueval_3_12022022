@@ -1,25 +1,16 @@
 @import "./variables";
 @import "./mixins";
+@import "./animations";
 
 .container-header_vers-acceuil {
     display: initial;
-}
-
-@keyframes fondu {
-    from {
-        transform: translate(0px, 10px);
-        opacity: 0;
-    }
-    to {
-        transform: translate(0px, 0px);
-        opacity: 1;
-    }
 }
 
 .container-image-titre {
     width: 100%;
     position: relative;
 }
+
 .image-fond {
     margin-bottom: 60px;
 }
@@ -40,46 +31,7 @@
         justify-content: space-between;
         align-items: center;
         & .container-coeur {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
-            &:hover {
-                cursor: pointer;
-            }
-            &:active {
-                & .coeur-plein {
-                    opacity: 1;
-                    background-color: white;
-                }
-                & .coeur-vide {
-                    color: transparent;
-                }
-            }
-            .coeur-vide {
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 1;
-                font-size: 30px;
-                color: black;
-                transition: color 150ms;
-            }
-            .coeur-plein {
-                position: absolute;
-                top: 0;
-                left: 0;
-                background: linear-gradient($couleur-primaire, $couleur-secondaire);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                opacity: 0;
-                z-index: -1;
-                font-size: 30px;
-                transition: opacity 150ms;
-            }
+            @include coeur (30px);
         }
     }
     h1 {
@@ -149,7 +101,6 @@
             margin: 5px 0;
             overflow: hidden;
             position: relative;
-
             &:hover {
                 .container-elastique {
                     width: 80%;
@@ -176,7 +127,6 @@
                 padding-left: 10px;
                 font-weight: 500;
                 overflow: hidden;
-
                 h2 {
                     margin: 0;
                     font-size: 18px;
@@ -278,46 +228,8 @@
 }
 
 .container-commander {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: $fond-gris-clair;
-    padding-bottom: 45px;
+    @include container-bouton;
     &_bouton {
-        width: 210px;
-        background-image: linear-gradient(to bottom right, $couleur-secondaire, $couleur-primaire);
-        border-radius: 25px;
-        box-shadow: 0px 5px 5px $fond-gris-plus-fonce-10;
-        padding: 17px 25px;
-        color: white;
-        text-decoration: none;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-        &:hover {
-            &::after {
-                opacity: 1;
-            }
-        }
-        &::after {
-            width: 100%;
-            height: 100%;
-            border-radius: 25px;
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-image: linear-gradient(
-                to bottom right,
-                lighten($couleur-secondaire, 10),
-                lighten($couleur-primaire, 10)
-            );
-            box-shadow: 0px 7px 7px $fond-gris-plus-fonce-20;
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 150ms;
-        }
+        @include bouton-principal;
     }
 }
