@@ -123,29 +123,32 @@
   opacity: 0;
   animation-name: fondu;
   animation-duration: 1s;
-  animation-delay: 750ms;
   animation-fill-mode: forwards;
+  animation-delay: 750ms;
 }
 .container-emplacement_plats .menu2 {
+  transform: translate(0px, 10px);
   opacity: 0;
   animation-name: fondu;
   animation-duration: 1s;
-  animation-delay: 500ms;
   animation-fill-mode: forwards;
+  animation-delay: 500ms;
 }
 .container-emplacement_plats .menu3 {
+  transform: translate(0px, 10px);
   opacity: 0;
   animation-name: fondu;
   animation-duration: 1s;
-  animation-delay: 250ms;
   animation-fill-mode: forwards;
+  animation-delay: 250ms;
 }
 .container-emplacement_plats .menu4 {
+  transform: translate(0px, 10px);
   opacity: 0;
   animation-name: fondu;
   animation-duration: 1s;
-  animation-delay: 0s;
   animation-fill-mode: forwards;
+  animation-delay: 0s;
 }
 .container-emplacement_plats_plat {
   width: 100%;

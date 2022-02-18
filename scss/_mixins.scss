@@ -1,0 +1,7 @@
+@mixin transformation-menu {
+    transform: translate(0px, 10px);
+    opacity: 0;
+    animation-name: fondu;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}

@@ -1,7 +1,7 @@
 @import "./variables";
 * {
     box-sizing: border-box;
-    font-family: #{$font-texte};
+    font-family: #{$police-texte};
 }
 
 img {
@@ -12,11 +12,13 @@ img {
 body {
     max-width: 768px;
 }
+
 @media screen and (min-width: 768px) {
     body {
         max-width: 992px;
     }
 }
+
 @media screen and (min-width: 992px) {
     body {
         max-width: 1600px;
@@ -24,7 +26,7 @@ body {
 }
 
 h1 {
-    font-family: #{$font-texte};
+    font-family: #{$police-texte};
 }
 
 .container-header {
@@ -44,6 +46,7 @@ h1 {
         width: 180px;
     }
 }
+
 @media screen and (min-width: 768px) {
     .container-header_logo {
         width: 250px;
@@ -56,7 +59,7 @@ footer {
     color: white;
     padding-left: 20px;
     h2 {
-        font-family: #{$font-titre};
+        font-family: #{$police-titre};
         font-size: 16px;
         font-weight: 200;
         margin: 0;
@@ -81,6 +84,7 @@ footer {
         }
     }
 }
+
 @media screen and(min-width:768px) {
     footer {
         padding-bottom: 30px;

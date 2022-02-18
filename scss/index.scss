@@ -16,7 +16,7 @@
         text-align: center;
         background-color: $fond-gris-fonce;
         border-top: 3px solid;
-        border-color: darken($fond-gris-fonce, 8);
+        border-color: $fond-gris-plus-fonce-8;
         font-weight: 400;
         font-size: 20px;
         .localisation {
@@ -47,7 +47,6 @@
         display: flex;
         justify-content: center;
         background-color: $fond-gris-clair;
-
         p {
             margin: 0;
             padding-bottom: 20px;
@@ -62,12 +61,11 @@
         justify-content: center;
         background-color: $fond-gris-clair;
         padding-bottom: 45px;
-
         .explorer-bouton {
             width: 210px;
             background-image: linear-gradient(to bottom right, $couleur-secondaire, $couleur-primaire);
             border-radius: 25px;
-            box-shadow: 0px 5px 5px darken($fond-gris-fonce, 10);
+            box-shadow: 0px 5px 5px $fond-gris-plus-fonce-10;
             padding: 17px;
             color: white;
             text-decoration: none;
@@ -90,8 +88,7 @@
                 bottom: 0;
                 left: 0;
                 background-image: linear-gradient(to bottom right, lighten($couleur-secondaire, 10), lighten($couleur-primaire, 10));
-                box-shadow: 0px 7px 7px darken($fond-gris-fonce, 20);
-
+                box-shadow: 0px 7px 7px $fond-gris-plus-fonce-20;
                 opacity: 0;
                 z-index: -1;
                 transition: opacity 150ms;
@@ -154,9 +151,9 @@
             bottom: 0;
             left: 0;
             border-radius: 15px;
-            box-shadow: 0px 7px 7px darken($fond-gris-fonce,10);
+            box-shadow: 0px 7px 7px $fond-gris-plus-fonce-10;
 
-            background-color: lighten($couleur-secondaire, 22);
+            background-color: $couleur-secondaire-plus-clair-22;
             opacity: 0;
             z-index: -1;
             transition: opacity 150ms;
@@ -212,7 +209,6 @@
             padding-right: 5px;
         }
     }
-    
 }
 
 .container-restaurant {
@@ -268,7 +264,7 @@
         }
         .etiquette-nouveau{
             background-color: $couleur-tertiaire;
-            color:darken($couleur-tertiaire , 50);
+            color:$couleur-tertiaire-plus-fonce-50;
             border-radius: 2px;
             position: absolute;
             right: 12px;
@@ -369,9 +365,6 @@
             margin: 3px;
         }
     }
-    
-
-
     .image-carte-1 {
         object-fit: cover;
         object-position: 50% 100%;

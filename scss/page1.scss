@@ -1,4 +1,6 @@
 @import "./variables";
+@import "./mixins";
+
 .container-header_vers-acceuil {
     display: initial;
 }
@@ -37,7 +39,6 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-
         & .container-coeur {
             width: 30px;
             height: 30px;
@@ -83,7 +84,7 @@
     }
     h1 {
         margin: 0;
-        font-family: #{$font-titre};
+        font-family: #{$police-titre};
         font-size: 24px;
     }
 }
@@ -105,7 +106,6 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-
         &_texte {
             font-size: 18px;
             padding: 2px 0;
@@ -121,42 +121,26 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        .menu1{
-            transform: translate(0px, 10px);
-            opacity: 0;
-            animation-name: fondu;
-            animation-duration: 1s;
+        .menu1 {
+            @include transformation-menu;
             animation-delay: 750ms;
-            animation-fill-mode: forwards;
         }
-        
-        .menu2{
-            opacity: 0;
-            animation-name: fondu;
-            animation-duration: 1s;
+
+        .menu2 {
+            @include transformation-menu;
             animation-delay: 500ms;
-            animation-fill-mode: forwards;
-
         }
-        
-        .menu3{
-            opacity: 0;
-            animation-name: fondu;
-            animation-duration: 1s;
+
+        .menu3 {
+            @include transformation-menu;
             animation-delay: 250ms;
-            animation-fill-mode: forwards;
-
         }
-        
-        .menu4{
-            opacity: 0;
-            animation-name: fondu;
-            animation-duration: 1s;
+
+        .menu4 {
+            @include transformation-menu;
             animation-delay: 0s;
-            animation-fill-mode: forwards;
-
         }
-        
+
         &_plat {
             width: 100%;
             max-width: 600px;
@@ -288,7 +272,7 @@
 }
 
 @media screen and (min-width: 992px) {
-    .container-emplacement{
+    .container-emplacement {
         max-width: 1080px;
     }
 }
@@ -301,10 +285,9 @@
     padding-bottom: 45px;
     &_bouton {
         width: 210px;
-
         background-image: linear-gradient(to bottom right, $couleur-secondaire, $couleur-primaire);
         border-radius: 25px;
-        box-shadow: 0px 5px 5px darken($fond-gris-fonce, 10);
+        box-shadow: 0px 5px 5px $fond-gris-plus-fonce-10;
         padding: 17px 25px;
         color: white;
         text-decoration: none;
@@ -331,8 +314,7 @@
                 lighten($couleur-secondaire, 10),
                 lighten($couleur-primaire, 10)
             );
-            box-shadow: 0px 7px 7px darken($fond-gris-fonce, 20);
-
+            box-shadow: 0px 7px 7px $fond-gris-plus-fonce-20;
             opacity: 0;
             z-index: -1;
             transition: opacity 150ms;
