@@ -53,7 +53,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffdff6;
+  background-color: #fff9fd;
   z-index: 10;
   animation: reduire-la-div 4s linear 0s 1 forwards;
 }
