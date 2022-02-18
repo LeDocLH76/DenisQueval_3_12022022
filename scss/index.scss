@@ -1,9 +1,74 @@
 @import "./variables";
 @import "./mixins";
+@import "./animations";
 
 .container-header_vers-acceuil {
     display: none;
 }
+
+
+.container-spinner {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lighten($couleur-secondaire,20);
+    z-index: 10;
+    animation: reduire-la-div 4s linear 0s 1 forwards;
+}
+.spinner {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation: rotation-engrenage 1s linear 0s 4;
+    &_exterieur {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 50px;
+        background-color: $couleur-primaire;
+        z-index: 20;
+    }
+    &_engrenage {
+        width: 100px;
+        height: 100px;
+        z-index: 30;
+        transform-origin: 50% 50%;
+$nombre-de-dents:10;
+        @for $i from 1 through $nombre-de-dents {
+            &_dent#{$i} {
+                transform: rotate(-360/$nombre-de-dents*1deg + $i*360/$nombre-de-dents*1deg);
+            }
+        }
+    }
+    &_centre {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        border-radius: 30px;
+        background-color: $couleur-secondaire;
+        z-index: 50;
+    }
+
+    .dent {
+        width: 10px;
+        height: 50px;
+        position: absolute;
+        left: 45px;
+        top: 0;
+        background-color: $couleur-tertiaire;
+        border-radius: 5px;
+        z-index: 40;
+        transform-origin: 50% 100%;
+    }
+}
+
 
 .container-titre {
     width: 100%;
