@@ -286,13 +286,13 @@
   }
 
   .container-emplacement {
-    max-width: 98%;
+    width: 95%;
     flex-direction: row;
     align-items: initial;
     justify-content: space-between;
   }
   .container-emplacement_titre {
-    width: 12%;
+    width: 10%;
   }
   .container-emplacement_titre_texte {
     font-size: 16px;
@@ -300,11 +300,11 @@
   .container-emplacement_plats {
     flex-direction: row;
     flex-wrap: wrap;
-    width: 88%;
+    width: 90%;
   }
   .container-emplacement_plats_plat {
-    width: 45%;
-    max-width: 300px;
+    width: 49%;
+    max-width: 310px;
     margin: 5px 5px;
   }
   .container-emplacement_plats_plat_texte h2 {
@@ -319,7 +319,7 @@
 }
 @media screen and (min-width: 992px) {
   .container-emplacement {
-    max-width: 1080px;
+    max-width: 1200px;
   }
 }
 .container-commander {
