@@ -6,7 +6,6 @@
     display: none;
 }
 
-
 .container-spinner {
     position: fixed;
     width: 100%;
@@ -14,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lighten($couleur-secondaire,25);
+    background-color: lighten($couleur-secondaire, 25);
     z-index: 10;
     animation: reduire-la-div 4s linear 0s 1 forwards;
 }
@@ -40,7 +39,7 @@
         transform-origin: 50% 50%;
         @for $i from 1 through $nombre-de-dents {
             &_dent#{$i} {
-                transform: rotate(-360/$nombre-de-dents*1deg + $i*360/$nombre-de-dents*1deg);
+                transform: rotate(-360 / $nombre-de-dents * 1deg + $i * 360 / $nombre-de-dents * 1deg);
             }
         }
     }
@@ -67,7 +66,6 @@
         transform-origin: 50% 100%;
     }
 }
-
 
 .container-titre {
     width: 100%;
@@ -294,6 +292,23 @@
                 height: 100%;
             }
         }
+        .image-carte-1 {
+            object-fit: cover;
+            object-position: 50% 100%;
+        }
+        .image-carte-2 {
+            object-fit: cover;
+            object-position: 50% 62%;
+        }
+        .image-carte-3 {
+            object-fit: cover;
+            object-position: 50% 100%;
+        }
+        .image-carte-4 {
+            object-fit: cover;
+            object-position: 50% 100%;
+        }
+    
         .etiquette-nouveau {
             background-color: $couleur-tertiaire;
             color: $couleur-tertiaire-plus-fonce-50;
@@ -332,7 +347,7 @@
             padding-left: 10px;
         }
         &_coeur {
-@include coeur (20px);
+            @include coeur(20px);
         }
     }
 }
@@ -357,21 +372,5 @@
             max-width: 330px;
             margin: 3px;
         }
-    }
-    .image-carte-1 {
-        object-fit: cover;
-        object-position: 50% 100%;
-    }
-    .image-carte-2 {
-        object-fit: cover;
-        object-position: 50% 62%;
-    }
-    .image-carte-3 {
-        object-fit: cover;
-        object-position: 50% 100%;
-    }
-    .image-carte-4 {
-        object-fit: cover;
-        object-position: 50% 100%;
     }
 }
