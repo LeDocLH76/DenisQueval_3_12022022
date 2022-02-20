@@ -2,16 +2,18 @@
 @import "./mixins";
 @import "./animations";
 
+// fait apparaite la fleche de retour vers index
 .container-header_vers-acceuil {
     display: initial;
 }
 
+// mise en forme de l'image de haut de page
 .container-image-titre {
     width: 100%;
     height: 280px;
     position: relative;
+    // voir aussi .restaurant-titre bottom
         margin-bottom: 30px;
-
 }
 
 .image-fond {
@@ -25,6 +27,7 @@
     width: 100%;
     height: 85px;
     position: absolute;
+    // pour le recouvrement sur l'immage
     bottom: -30px;
     background-color: $fond-gris-clair;
     border-radius: 25px 25px 0 0;
@@ -37,6 +40,7 @@
         justify-content: space-between;
         align-items: center;
         & .container-coeur {
+            // voir les details en mixins
             @include coeur(30px);
         }
     }
@@ -47,6 +51,7 @@
     }
 }
 
+// grande zone contenant titre et menu
 .menu {
     width: 100%;
     background-color: $fond-gris-clair;
@@ -55,6 +60,8 @@
     align-items: center;
 }
 
+// zone contenant une partie d'un menu
+// mise en forme identique pour entrees plats desserts
 .container-emplacement {
     width: 90%;
     display: flex;
@@ -75,56 +82,62 @@
             padding-bottom: 10px;
         }
     }
+    // container des plats de soit: entréees ou plats ou desserts
     &_plats {
         width: 100%;
         display: flex;
         flex-direction: column;
+        // le premier plat. c'est aussi le dernier a apparaitre dans l'animation
         .menu1 {
+            // voir mixins pour les details
             @include transformation-menu;
             animation-delay: 750ms;
         }
-
         .menu2 {
             @include transformation-menu;
             animation-delay: 500ms;
         }
-
         .menu3 {
             @include transformation-menu;
             animation-delay: 250ms;
         }
-
+        // le dermier plat. c'est aussi le premier a apparaitre dans l'animation
         .menu4 {
             @include transformation-menu;
             animation-delay: 0s;
         }
-
         &_plat {
             width: 100%;
             max-width: 600px;
             background-color: white;
             border-radius: 10px;
             margin: 5px 0;
+            // masque le container de selection
             overflow: hidden;
             position: relative;
+            // reaction d'un plat au survol
             &:hover {
+                // reduction du container texte
                 .container-elastique {
                     width: 80%;
                 }
+                // apparition du container setection du plat
                 .selecteur {
                     right: 0;
                 }
+                // rotation de l'icone
                 .selecteur i {
                     transform: rotate(360deg);
                 }
             }
             .container-elastique {
-                width: 100%; /*80%*/
+                width: 100%; //80%
                 height: 70px;
                 padding-bottom: 12px;
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-end;
+                // temps de reduction du container
                 transition: width 300ms;
             }
             &_texte {
@@ -132,12 +145,16 @@
                 flex-direction: column;
                 padding-left: 10px;
                 font-weight: 500;
+                // masque le recouvrement par le prix
                 overflow: hidden;
                 h2 {
                     margin: 0;
                     font-size: 18px;
+                    // interdit le retour a la ligne
                     white-space: nowrap;
+                    // masque le recouvrement
                     overflow: hidden;
+                    // fait apparaite les points de suspension
                     text-overflow: ellipsis;
                 }
                 p {
@@ -163,9 +180,13 @@
                 justify-content: center;
                 align-items: center;
                 position: absolute;
+                // colle juste a droite du container plat
                 right: -70px;
                 top: 0;
+                // temps de translation droite vers gauche
+                // legerement plus long que la reduction du container texte
                 transition: right 350ms;
+                // cta main sur le survol
                 &:hover {
                     cursor: pointer;
                 }
@@ -174,12 +195,15 @@
                     color: $couleur-tertiaire;
                     background-color: white;
                     border-radius: 15px;
+                    // temps de rotation de l'icone
+                    // identique a latranslation de son container
                     transition: transform 350ms;
                 }
             }
         }
     }
 }
+
 @media screen and (min-width: 768px) {
     .container-image-titre {
         display: flex;
@@ -237,6 +261,7 @@
 }
 
 .container-commander {
+    // voir les mixins pour les details
     @include container-bouton;
     &_bouton {
         @include bouton-principal;

@@ -1,30 +1,15 @@
 @mixin transformation-menu {
+    // le plat se deplace vers le haut
     transform: translate(0px, 10px);
+    // n'est pas visible au debut
     opacity: 0;
+    // voir les animations pour les details
     animation-name: fondu;
     animation-duration: 1s;
+    // reste a l'etat de fin pour rester visible
     animation-fill-mode: forwards;
 }
-@mixin coeur-vide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    color: black;
-    transition: color 150ms;     
-}
-@mixin coeur-plein {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: linear-gradient($couleur-primaire, $couleur-secondaire);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 150ms;
-}
+// mise  en forme et comportement d'un bouton
 @mixin bouton-principal {
     width: 210px;
     background-image: linear-gradient(to bottom right, $couleur-secondaire, $couleur-primaire);
@@ -36,11 +21,14 @@
     text-align: center;
     position: relative;
     z-index: 1;
+    // fait apparaitre au survol la div placee par dessus par ::after
     &:hover {
         &::after {
             opacity: 1;
         }
     }
+    // place une div par dessus le bouton
+    // la met en forme et la rend invisible, prete pour le survol
     &::after {
         width: 100%;
         height: 100%;
@@ -53,34 +41,62 @@
         left: 0;
         background-image: linear-gradient(
             to bottom right,
-            lighten($couleur-secondaire, 10),
-            lighten($couleur-primaire, 10)
+            $couleur-secondaire-plus-clair-5,
+            $couleur-primaire-plus-clair-5
         );
         box-shadow: 0px 7px 7px $fond-gris-plus-fonce-20;
         opacity: 0;
         z-index: -1;
+        // temps de transition du bouton
         transition: opacity 150ms;
     }
-
 }
-@mixin container-bouton{
+// mise en forme de la zone d'un bouton
+@mixin container-bouton {
     width: 100%;
     display: flex;
     justify-content: center;
     background-color: $fond-gris-clair;
     padding-bottom: 45px;
-
 }
-@mixin coeur ($taille:20px){
+// mise en forme et comportement des coeurs
+@mixin coeur-vide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // est place au dessus du coeur plein
+    z-index: 1;
+    color: black;
+    // temps de transition identique a celui du coeur plein
+    transition: color 150ms;
+}
+@mixin coeur-plein {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient($couleur-primaire, $couleur-secondaire);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    // est transparent
+    opacity: 0;
+    // est place sous le coeur vide
+    z-index: -1;
+    // temps de transition identique a celui du coeur vide
+    transition: opacity 150ms;
+}
+@mixin coeur($taille: 20px) {
     width: $taille;
     height: $taille;
     margin-right: 10px;
     margin-bottom: 10px;
     position: relative;
     z-index: 1;
+    // cta main au survol
     &:hover {
         cursor: pointer;
     }
+    // remplissage au clic
     &:active {
         & .coeur-plein {
             opacity: 1;
@@ -98,5 +114,4 @@
         @include coeur-plein;
         font-size: $taille;
     }
-
 }

@@ -2,26 +2,30 @@
 @import "./mixins";
 @import "./animations";
 
+// rend invisible la fleche de retour vers index.html
 .container-header_vers-acceuil {
     display: none;
 }
 
+// mise en forme du container spinner
 .container-spinner {
+    // place le container par dessus la page
     position: fixed;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lighten($couleur-secondaire, 25);
+    background-color: $couleur-secondaire-plus-clair-25;
     z-index: 10;
-    animation: reduire-la-div 4s linear 0s 1 forwards;
+    animation: reduire-la-div 3s linear 0s 1 forwards;
 }
+// construction du spinner
 .spinner {
     width: 100px;
     height: 100px;
     position: relative;
-    animation: rotation-engrenage 1s linear 0s 4;
+    animation: rotation-engrenage 1s linear 0s 3;
     &_exterieur {
         width: 100px;
         height: 100px;
@@ -37,6 +41,10 @@
         height: 100px;
         z-index: 30;
         transform-origin: 50% 50%;
+        // construction des dents
+        // le nombre est ajustable dans les variables
+        // debut de la boucle a 1 pour ne pas diviser par 0 !
+        // 360 / $nombre-de-dents > ecart angulaire entre chaque dents
         @for $i from 1 through $nombre-de-dents {
             &_dent#{$i} {
                 transform: rotate(-360 / $nombre-de-dents * 1deg + $i * 360 / $nombre-de-dents * 1deg);
@@ -63,15 +71,19 @@
         background-color: $couleur-tertiaire;
         border-radius: 5px;
         z-index: 40;
+        // deplace l'origine pour preparer les rotations
+        // centre du bas de la dent
         transform-origin: 50% 100%;
     }
 }
 
+// mise en forme de la zone en dessous du logo
 .container-titre {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    // mise en forme de la zone de localisation
     &_localisation {
         width: 100%;
         display: flex;
@@ -88,9 +100,11 @@
             width: 230px;
         }
     }
+    // icone localisation
     & i {
         padding-right: 10px;
     }
+    // mise en forme du titre principal
     &_principal {
         width: 100%;
         display: flex;
@@ -106,6 +120,7 @@
             padding-bottom: 15px;
         }
     }
+    // mise en forme de la zone de presentation de l'entreprise
     &_presentation {
         width: 100%;
         display: flex;
@@ -119,6 +134,7 @@
             text-align: center;
         }
     }
+    // mise ne forme du bouton explorer
     &_bouton {
         @include container-bouton;
         .explorer-bouton {
@@ -127,6 +143,7 @@
     }
 }
 
+// mise  en forme de la zone fonctionnement
 .container-fonctionnement {
     width: 100%;
     display: flex;
@@ -136,6 +153,7 @@
     a {
         text-decoration: none;
     }
+    // zone titre
     &_titre {
         width: 90%;
         font-size: 16px;
@@ -146,11 +164,13 @@
             padding-bottom: 15px;
         }
     }
+    // zone des trois boutons
     &_3boutons {
         width: 90%;
         display: flex;
         flex-direction: column;
     }
+    // chaque bouton
     &_bouton {
         width: 100%;
         max-width: 400px;
@@ -164,15 +184,20 @@
         box-shadow: 0px 5px 5px $fond-gris-fonce;
         margin: 10px 0;
         position: relative;
+        // placee au dessus
         z-index: 1;
+        // fait apparaitre la div ::after au survol
         &:hover {
             i {
+                // change la couleur de l'icone
                 color: $couleur-primaire;
             }
             &::after {
+                // fait apparaitre la div ::after
                 opacity: 1;
             }
         }
+        // mise en forme de la div placee au dessus et rendue transparente
         &::after {
             content: "";
             position: absolute;
@@ -181,14 +206,19 @@
             bottom: 0;
             left: 0;
             border-radius: 15px;
+            // agrandi l'ombre
             box-shadow: 0px 7px 7px $fond-gris-plus-fonce-10;
-
+            // change la couleur de fond
             background-color: $couleur-secondaire-plus-clair-22;
+            // transparent de base
             opacity: 0;
+            // placee en dessous
             z-index: -1;
+            // temps de transition des boutons au survol
             transition: opacity 150ms;
         }
     }
+    // mise  en forme de la numerotation des etapes
     &_etape {
         display: flex;
         justify-content: center;
@@ -200,12 +230,14 @@
         color: white;
         border-radius: 15px;
     }
+    // mise  en forme de l'icone
     &_icone {
         font-size: 22px;
         color: rgb(139, 139, 139);
         padding-left: 20px;
         padding-right: 10px;
     }
+    // mise en forme du texte
     &_texte {
         font-size: 16px;
         font-weight: 500;
@@ -213,34 +245,40 @@
     }
 }
 
+// mise  en forme de la zone fonctionnement pour les tablettes et les desktop
 @media screen and(min-width:768px) {
     .container-fonctionnement {
-        display: flex;
-        flex-direction: column;
+        // centre le contenu
         align-items: center;
+        // place les boutons a l'horizontale
         &_3boutons {
             width: 100%;
             padding-right: 10px;
             flex-direction: row;
             justify-content: space-around;
         }
+        // redefini leur taille
         &_bouton {
             width: 31%;
             max-width: 400px;
         }
+        // centre le titre
         &_titre {
             display: flex;
             justify-content: center;
+            // et change sa taille
             h2 {
                 font-size: 24px;
             }
         }
+        // evite de coller le bord droit du bouton pour les petites largeur d'ecran
         &_texte {
             padding-right: 5px;
         }
     }
 }
 
+// mise en forme de la zone restaurant
 .container-restaurant {
     width: 100%;
     background-color: $fond-gris-clair;
@@ -249,6 +287,7 @@
     align-items: center;
     margin-top: 40px;
     padding: 0 20px 30px 20px;
+    // zone titre
     &_titre {
         display: flex;
         flex-direction: row;
@@ -257,18 +296,21 @@
         max-width: 450px;
         font-size: 16px;
         font-weight: 500;
+        // titre
         h2 {
             margin: 0;
             padding-top: 40px;
             padding-bottom: 15px;
         }
     }
+    // zone des cartes
     &_4restaurants {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+    // chacune des cartes
     &_carte {
         width: 100%;
         max-width: 450px;
@@ -276,22 +318,27 @@
         border-radius: 15px;
         overflow: hidden;
         margin-bottom: 15px;
+        // pour satisfaire les naviguateurs nom du restaurant masqué
         h2 {
             display: none;
         }
+        // lien cliquable
         a {
             text-decoration: none;
         }
+        // zone de l'image
         &_image {
             width: 100%;
             height: 172px;
             overflow: hidden;
             position: relative;
+            // photo d'un plat
             img {
                 width: 100%;
                 height: 100%;
             }
         }
+        // positionnement individuel des images
         .image-carte-1 {
             object-fit: cover;
             object-position: 50% 100%;
@@ -308,7 +355,7 @@
             object-fit: cover;
             object-position: 50% 90%;
         }
-    
+        // post-it nouveau
         .etiquette-nouveau {
             background-color: $couleur-tertiaire;
             color: $couleur-tertiaire-plus-fonce-50;
@@ -320,16 +367,19 @@
             font-size: 14px;
             font-style: normal;
         }
+        // contenu hors image
         &_corps {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+        // container du texte
         &_texte {
             width: 90%;
             display: flex;
             flex-direction: column;
         }
+         // nom du restaurant
         &_titre {
             margin: 0;
             color: black;
@@ -338,6 +388,7 @@
             padding-top: 5px;
             padding-left: 10px;
         }
+         // emplacement du restaurant
         &_localisation {
             color: black;
             font-size: 16px;
@@ -346,28 +397,34 @@
             padding-bottom: 15px;
             padding-left: 10px;
         }
+        // le j'aime!
         &_coeur {
             @include coeur(20px);
         }
     }
 }
 
+// mise en forme de la zone restaurant pour les tablettes et desktop
 @media screen and (min-width: 768px) {
     .container-restaurant {
+        // titre deplace au centre
         &_titre {
             max-width: initial;
             flex-direction: row;
             justify-content: center;
             padding-bottom: 20px;
+            // changement de la taille
             h2 {
                 font-size: 24px;
             }
         }
+        // mise a l'horiontale avec retour a la ligne
         &_4restaurants {
             flex-direction: row;
             justify-content: space-around;
             flex-wrap: wrap;
         }
+        // limitation de la largeur des cartes
         &_carte {
             max-width: 330px;
             margin: 3px;

@@ -4,10 +4,14 @@ $fond-gris-plus-fonce-10:darken($fond-gris-fonce, 10);
 $fond-gris-plus-fonce-20:darken($fond-gris-fonce, 20);
 $fond-gris-clair: rgb(245,245,245);
 $couleur-primaire:#9356dc;
+$couleur-primaire-plus-clair-5:lighten($couleur-primaire, 5);
 $couleur-secondaire:#ff79da;
+$couleur-secondaire-plus-clair-5:lighten($couleur-secondaire, 5);
 $couleur-secondaire-plus-clair-22:lighten($couleur-secondaire, 22);
+$couleur-secondaire-plus-clair-25:lighten($couleur-secondaire, 25);
 $couleur-tertiaire:#99e2d0;
 $couleur-tertiaire-plus-fonce-50:darken($couleur-tertiaire , 50);
 $police-texte: "'Roboto', sans-serif";
 $police-titre: "'Shrikhand', cursive";
+// pour le spinner
 $nombre-de-dents:10;

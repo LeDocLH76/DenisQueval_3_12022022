@@ -1,13 +1,4 @@
-@keyframes fondu {
-    from {
-        transform: translate(0px, 10px);
-        opacity: 0;
-    }
-    to {
-        transform: translate(0px, 0px);
-        opacity: 1;
-    }
-}
+// pour le spinner
 @keyframes rotation-engrenage {
     0% {
         transform: rotate(0deg);
@@ -16,6 +7,7 @@
         transform: rotate(360deg);
     }
 }
+// pour le container du spinner: devient transparant a la fin puis disparait
 @keyframes reduire-la-div {
     0%{
         transform: translateY(0);
@@ -43,3 +35,14 @@
     }
 }
 
+// pour la zone de selection des plats: apparition et deplacement progressif
+@keyframes fondu {
+    from {
+        transform: translate(0px, 10px);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}

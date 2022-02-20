@@ -1,13 +1,3 @@
-@keyframes fondu {
-  from {
-    transform: translate(0px, 10px);
-    opacity: 0;
-  }
-  to {
-    transform: translate(0px, 0px);
-    opacity: 1;
-  }
-}
 @keyframes rotation-engrenage {
   0% {
     transform: rotate(0deg);
@@ -40,6 +30,16 @@
     opacity: 0;
     width: 0;
     height: 0;
+  }
+}
+@keyframes fondu {
+  from {
+    transform: translate(0px, 10px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0px, 0px);
+    opacity: 1;
   }
 }
 .container-header_vers-acceuil {
@@ -209,7 +209,6 @@
 }
 .container-emplacement_plats_plat .container-elastique {
   width: 100%;
-  /*80%*/
   height: 70px;
   padding-bottom: 12px;
   display: flex;
@@ -354,7 +353,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(to bottom right, #fface8, #ae80e5);
+  background-image: linear-gradient(to bottom right, #ff93e1, #a16be0);
   box-shadow: 0px 7px 7px #b8b8b8;
   opacity: 0;
   z-index: -1;
