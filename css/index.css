@@ -42,6 +42,14 @@
     opacity: 1;
   }
 }
+@keyframes devoiler-image {
+  from {
+    margin-top: 0px;
+  }
+  to {
+    margin-top: 530px;
+  }
+}
 .container-header_vers-acceuil {
   display: none;
 }

@@ -231,7 +231,12 @@
     // la marge de ce container peut varier de 0 à 530px
     // pour masquer l'image le temps de l'animation des menus
     .container-principal{
-        margin-top: 530px;
+        margin-top: 0px;
+        animation-name: devoiler-image;
+        animation-duration: 1s;
+        animation-delay: 3s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
     }
     .restaurant-titre .container-titre {
         width: 40%;
